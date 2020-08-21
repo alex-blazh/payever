@@ -8,6 +8,7 @@
 * helm 3.0+
 
 Create AWS service account with next policy
+
 ```json
 {
     "Version": "2012-10-17",
@@ -153,6 +154,7 @@ Create AWS service account with next policy
 ```
 
 Copy sa key and configure aws cli
+
 ```sh
 aws configure
 ```
@@ -172,9 +174,9 @@ export CLUSTER_NAME="payever-eks-z44vlCmY"
 aws eks --region eu-central-1 update-kubeconfig --name payever-eks-z44vlCmY
 ```
 
-At that moment we have deployed k8s cluster and preconfigured local environment to deploy some usefull payload
+At that moment we have deployed k8s cluster and pre configured local environment to deploy some useful payload
 
-## Delpoy MySQL server and monitoring
+## Deploy MySQL server and monitoring
 
 In the folder `terraform-helm` review variables and run next commands to deploy mariadb and monitoring
 
@@ -187,10 +189,10 @@ terraform apply terraform.tfplan
 now we have installed:
 
 * `mariadb` with enabled `slow_query_log` , `mysq-exporter` for prometheus and pre created database
-* `grfana` with preconfigured dasboards ( Datasources has to be created manually. Type: Prometheus, url: http://prometheus-server:80 )
+* `grafana` with preconfigured dasboards and alarms ( Datasources has to be created manually. Type: Prometheus, url: http://prometheus-server:80 )
 * `prometheus` with `node-exporter`,`kube-state-metrics` and `alertmanager`
 
-All services don't accesseble from internet to connect to them directly from local pc use next connamds
+All services don't accessible from internet to connect to them directly from local pc use next commands and access to corresponding port on 127.0.0.1
 
 ```sh
 kubectl port-forward service/grafana 3000  # Grafana web interface
@@ -199,7 +201,5 @@ kubectl port-forward service/payeverdb-mariadb 9104 # MySQL-exporter /metrics
 kubectl port-forward service/prometheus-alertmanager 80 # Prometheus alertmanager
 kubectl port-forward service/prometheus-server 80 # Prometheus server
 ```
-
-and acceess to correspondig port on 127.0.0.1
 
 ## TODO
