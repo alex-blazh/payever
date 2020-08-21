@@ -1,0 +1,20 @@
+---
+# grafana
+admin:
+  user: payever
+  password: caf2wodNak
+datasources.secretName: grafana-datasources
+persistence.enabled: "true"
+metrics.enabled: "true"
+dashboardsProvider:
+  enabled: "true"
+  configMapName: grafana-dashboards
+dashboardsConfigMaps:
+  - configMapName: grafana-dashboards
+    fileName: dashboard_alarms.json
+  - configMapName: grafana-dashboards
+    fileName: dashboard_k8s_cluster.json
+  - configMapName: grafana-dashboards
+    fileName: dashboard_prometheus.json
+  - configMapName: grafana-dashboards
+    fileName: dashboard_system.json

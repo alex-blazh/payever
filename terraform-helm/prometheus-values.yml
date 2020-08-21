@@ -1,0 +1,5 @@
+---
+alertmanager:
+  enabled: true
+  # configFromSecret: ""
+  # ingress.enabled
