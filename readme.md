@@ -203,6 +203,18 @@ All stuff still managed by helm
 
 so you can easy uninstall some chart by command
 
+
+
+```sh
+helm uninstall grafana
+terraform refresh
+```
+and install it back with
+
+```sh
+terraform apply
+```
+
 ### Grafana cluster overview dashboard
 
 ![grafana1](img/grafana1.png)
@@ -218,16 +230,9 @@ so you can easy uninstall some chart by command
 
 ![mysq-exporter](img/mysql-exporter.png)
 
+# Prometheus with MySQL slow_query rate graph
 
-```sh
-helm uninstall grafana
-terraform refresh
-```
-and install it back with
-
-```sh
-terraform apply
-```
+![prometheus](img/prom.png)
 
 All services don't accessible from internet to connect to them directly from local pc use next commands and access to corresponding port on 127.0.0.1
 
