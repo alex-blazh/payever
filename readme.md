@@ -208,7 +208,7 @@ so you can easy uninstall some chart by command
 ![grafana-system](img/grafana-system.png)
 
 ### mysql-exporter
-![mysq-exporter](img/mysq-exporter.png)
+![mysq-exporter](img/mysql-exporter.png)
 
 
 ```sh
