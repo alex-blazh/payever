@@ -26,10 +26,10 @@ config:
             problem: 2
             critical: 3
   outputs:
-    - influxdb:
-        urls:
-          - "http://influxdb.monitoring.svc:8086"
-        database: "telegraf"
+    # - influxdb:
+    #     urls:
+    #       - "http://influxdb.monitoring.svc:8086"
+    #     database: "telegraf"
     - prometheus_client:
         listen: ":9273"
   inputs:
