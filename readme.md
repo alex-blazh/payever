@@ -203,11 +203,18 @@ All stuff still managed by helm
 so you can easy uninstall some chart by command
 
 ### Grafana cluster overview dashboard
+
 ![grafana1](img/grafana1.png)
+
 ### Grafana system overview dashboard
+
 ![grafana-system](img/grafana-system.png)
 
+## Grafana alerts dashboard
+
+![grafana-alerts.png](img/grafana-alerts.png)
 ### mysql-exporter
+
 ![mysq-exporter](img/mysql-exporter.png)
 
 
@@ -229,9 +236,11 @@ kubectl port-forward service/payeverdb-mariadb 3306 # MySQL
 kubectl port-forward service/payeverdb-mariadb 9104 # MySQL-exporter /metrics
 kubectl port-forward service/prometheus-alertmanager 80 # Prometheus alertmanager
 kubectl port-forward service/prometheus-server 80 # Prometheus server
+kubectl port-forward svc/telegraf 9273 # telegraf prometheus_client /metrics
 ```
 
 ## TODO
 
 * Secure store passwords
+* create ro users for grafana and telegraf
 * setup prometheus alarm managers

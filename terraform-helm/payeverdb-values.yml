@@ -72,8 +72,9 @@ master:
   config: |-
     [mysqld]
     slow_query_log=1
-    long_query_time=0.1
+    long_query_time=1.5
     log_queries_not_using_indexes=1
+    log_output=TABLE
     skip-name-resolve
     explicit_defaults_for_timestamp
     basedir=/opt/bitnami/mariadb

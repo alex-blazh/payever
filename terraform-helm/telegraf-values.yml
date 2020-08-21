@@ -1,3 +1,7 @@
+service:
+  annotations:
+    prometheus.io/port: "9273"
+    prometheus.io/scrape: "true"
 ## Exposed telegraf configuration
 ## For full list of possible values see `/docs/all-config-values.yaml` and `/docs/all-config-values.toml`
 ## ref: https://docs.influxdata.com/telegraf/v1.1/administration/configuration/
@@ -43,6 +47,19 @@ config:
     #     allowed_pending_messages: 10000
     #     percentile_limit: 1000
     - mysql:
-      metric_version: 2
-      servers:
-        - "tcp(payeverdb-mariadb:3306)/"
+        gather_table_schema: true
+        gather_process_list: true
+        gather_user_statistics: true
+        gather_info_schema_auto_inc: true
+        gather_innodb_metrics: true
+        gather_slave_status: true
+        gather_binary_logs: true
+        gather_global_variables: true
+        gather_table_io_waits: true
+        gather_table_lock_waits: true
+        gather_index_io_waits: true
+        gather_event_waits: true
+        gather_file_events_stats: true
+        gather_perf_events_statements: true
+        servers:
+          - "payeverdb:caf2wodNak@tcp(payeverdb-mariadb:3306)/?tls=false"
