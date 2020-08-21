@@ -202,6 +202,15 @@ All stuff still managed by helm
 
 so you can easy uninstall some chart by command
 
+### Grafana cluster overview dashboard
+![grafana1](img/grafana1.png)
+### Grafana system overview dashboard
+![grafana-system](img/grafana-system.png)
+
+### mysql-exporter
+![mysq-exporter](img/mysq-exporter.png)
+
+
 ```sh
 helm uninstall grafana
 terraform refresh
