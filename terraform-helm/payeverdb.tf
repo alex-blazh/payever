@@ -1,12 +1,12 @@
 # === MariaDB ===
-resource "kubernetes_config_map" "initdb" {
-  metadata {
-    name = "initdb"
-  }
-  data = {
-    "init.sql" = "${file("${path.module}/mariadb/init.sql")}"
-  }
-}
+# resource "kubernetes_config_map" "initdb" {
+#   metadata {
+#     name = "initdb"
+#   }
+#   data = {
+#     "init.sql" = "${file("${path.module}/mariadb/init.sql")}"
+#   }
+# }
 
 resource "helm_release" "payeverdb" {
   name  = "payeverdb"
@@ -19,7 +19,7 @@ resource "helm_release" "payeverdb" {
   # provisioner "local-exec" {
   #   command = "helm test payeverdb"
   # }
-  depends_on = [
-    kubernetes_config_map.initdb,
-  ]
+  # depends_on = [
+  #   kubernetes_config_map.initdb,
+  # ]
 }

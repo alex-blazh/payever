@@ -1,13 +1,15 @@
 ---
-replication.enabled: "false"
-# master.livenessProbe.enabled: false
-# master.readinessProbe.enabled: false
-# slave.livenessProbe.enabled: false
-# slave.readinessProbe.enabled: false
+replication.enabled: "true"
+volumePermissions.enabled: "true"
+image.debug: "true"
+master.livenessProbe.enabled: "false"
+master.readinessProbe.enabled: "false"
+slave.livenessProbe.enabled: "false"
+slave.readinessProbe.enabled: "false"
 master.persistence.enabled: "true"
 # master.persistence.existingClaim: payeverdb-pv-claim
 # master.persistence.annotations: {}
-initdbScriptsConfigMap: initdb
+# initdbScriptsConfigMap: initdb
 db:
   name: payeverdb
   user: payeverdb
@@ -72,7 +74,6 @@ master:
     slow_query_log=1
     long_query_time=0.1
     log_queries_not_using_indexes=1
-    log_output = TABLE;
     skip-name-resolve
     explicit_defaults_for_timestamp
     basedir=/opt/bitnami/mariadb
@@ -105,7 +106,6 @@ slave:
     slow_query_log=1
     long_query_time=0.1
     log_queries_not_using_indexes=1
-    log_output = TABLE;
     skip-name-resolve
     explicit_defaults_for_timestamp
     basedir=/opt/bitnami/mariadb

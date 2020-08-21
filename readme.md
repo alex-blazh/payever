@@ -174,7 +174,9 @@ export CLUSTER_NAME="payever-eks-z44vlCmY"
 aws eks --region eu-central-1 update-kubeconfig --name payever-eks-z44vlCmY
 ```
 
-At that moment we have deployed k8s cluster and pre configured local environment to deploy some useful payload
+At that moment we have deployed k8s cluster and pre configured local environment to deploy some useful payload.
+
+![Screenshot1](img/screenshot1.png)
 
 ## Deploy MySQL server and monitoring
 
@@ -191,6 +193,24 @@ now we have installed:
 * `mariadb` with enabled `slow_query_log` , `mysq-exporter` for prometheus and pre created database
 * `grafana` with preconfigured dasboards and alarms ( Datasources has to be created manually. Type: Prometheus, url: http://prometheus-server:80 )
 * `prometheus` with `node-exporter`,`kube-state-metrics` and `alertmanager`
+
+![Screenshot2](img/screenshot2.png)
+
+All stuff still managed by helm
+
+![Screenshot3](img/screenshot3.png)
+
+so you can easy uninstall some chart by command
+
+```sh
+helm uninstall grafana
+terraform refresh
+```
+and install it back with
+
+```sh
+terraform apply
+```
 
 All services don't accessible from internet to connect to them directly from local pc use next commands and access to corresponding port on 127.0.0.1
 
