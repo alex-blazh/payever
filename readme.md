@@ -193,6 +193,7 @@ now we have installed:
 * `mariadb` with enabled `slow_query_log` , `mysq-exporter` for prometheus and pre created database
 * `grafana` with preconfigured dasboards and alarms ( Datasources has to be created manually. Type: Prometheus, url: http://prometheus-server:80 )
 * `prometheus` with `node-exporter`,`kube-state-metrics` and `alertmanager`
+* `telegram` with mysql input plugin configured
 
 ![Screenshot2](img/screenshot2.png)
 
