@@ -250,3 +250,4 @@ kubectl port-forward svc/telegraf 9273 # telegraf prometheus_client /metrics
 * Secure store passwords
 * create ro users for grafana and telegraf
 * setup prometheus alarm managers
+* setup elb for public services
